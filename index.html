@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bun &amp; Bite | Menu</title>
+<meta name="description" content="Burgers, fries and shakes in Bahrain. Digital menu (demo).">
+<meta name="theme-color" content="#111111">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FFF3DC;--cream2:#FBE6BE;--black:#161210;--orange:#FF6A13;--orange-d:#D9520A;--r:22px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Figtree,system-ui,sans-serif;background:var(--cream);color:var(--black);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.demo{background:var(--orange);color:var(--black);text-align:center;font-weight:700;font-size:.9rem;padding:8px 16px}
+
+/* Hero */
+.hero{background:var(--black);color:var(--cream);position:relative;overflow:hidden;padding:56px 0 84px}
+.hero .wrap{display:grid;gap:28px;align-items:center}
+.hero h1{font-family:'Bowlby One',Impact,sans-serif;font-weight:400;font-size:clamp(3.4rem,15vw,8.5rem);line-height:.92;letter-spacing:-.01em}
+.hero h1 span{display:block;color:var(--orange)}
+.hero p{font-size:1.15rem;max-width:30ch;color:#EAD9B8}
+.hero .cta{display:inline-block;margin-top:22px;background:var(--orange);color:var(--black);font-weight:700;padding:14px 26px;border-radius:999px;text-decoration:none;transition:transform .15s,background .15s}
+.hero .cta:hover{background:var(--cream);transform:translateY(-2px)}
+.stamp{width:170px;height:170px;border-radius:50%;background:var(--cream);color:var(--black);display:grid;place-items:center;text-align:center;font-family:'Bowlby One',sans-serif;font-size:1.25rem;line-height:1.1;border:5px dashed var(--orange);transform:rotate(-10deg);animation:wob 1.2s .3s cubic-bezier(.3,1.6,.5,1) both}
+.stamp small{display:block;font-family:Figtree,sans-serif;font-weight:700;font-size:.8rem;margin-top:4px}
+@keyframes wob{from{transform:rotate(-40deg) scale(.2);opacity:0}}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:28px;background:radial-gradient(circle at 14px 0,var(--cream) 13px,transparent 14px) 0 0/28px 28px repeat-x}
+@media(min-width:820px){.hero .wrap{grid-template-columns:1.5fr 1fr;justify-items:center}.stamp{width:240px;height:240px;font-size:1.7rem}.hero{padding:84px 0 110px}}
+
+/* Menu */
+.menu-head{padding:48px 0 10px}
+.menu-head h2{font-family:'Bowlby One',sans-serif;font-weight:400;font-size:clamp(2.4rem,8vw,4rem);line-height:1}
+.menu-head p{margin-top:8px;color:#5b4a3a}
+.cats{position:sticky;top:0;z-index:10;background:var(--cream);padding:12px 0;border-bottom:2px solid var(--black)}
+.cats .wrap{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none}
+.cats .wrap::-webkit-scrollbar{display:none}
+.cats button{flex:none;font:inherit;font-weight:700;cursor:pointer;background:transparent;color:var(--black);border:2px solid var(--black);border-radius:999px;padding:10px 20px;transition:all .15s}
+.cats button:hover{background:var(--cream2)}
+.cats button[aria-pressed=true]{background:var(--black);color:var(--cream)}
+.grid{display:grid;gap:22px;padding:28px 0 64px;grid-template-columns:1fr}
+@media(min-width:620px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.grid{grid-template-columns:repeat(3,1fr);gap:28px}}
+.card{background:#fff;border:3px solid var(--black);border-radius:var(--r);overflow:hidden;box-shadow:6px 6px 0 var(--black);display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 var(--orange)}
+.ph{aspect-ratio:4/3;background:var(--orange);position:relative;display:grid;place-items:center;font-size:4.5rem;border-bottom:3px solid var(--black)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:12px;left:12px;background:var(--black);color:var(--cream);font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:999px;z-index:1}
+.body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.card h3{font-family:'Bowlby One',sans-serif;font-weight:400;font-size:1.3rem;line-height:1.15}
+.price{flex:none;background:var(--orange);border:2px solid var(--black);border-radius:12px;padding:3px 10px;font-weight:700;white-space:nowrap}
+.card p{color:#4d3f33;font-size:.97rem}
+
+/* Footer */
+footer{background:var(--black);color:var(--cream);padding:44px 0;text-align:center}
+footer .logo{font-family:'Bowlby One',sans-serif;font-size:1.8rem;color:var(--orange)}
+footer p{margin-top:8px;color:#EAD9B8}
+footer a.ig{display:inline-block;margin-top:18px;border:2px solid var(--orange);color:var(--orange);padding:10px 22px;border-radius:999px;font-weight:700;text-decoration:none}
+footer a.ig:hover{background:var(--orange);color:var(--black)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="demo">Demo menu: sample items and placeholder prices</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Bun &amp;<span>Bite</span></h1>
+      <p>Stacked high, grilled hot and served fast. Welcome to our menu.</p>
+      <a class="cta" href="#menu">See the menu</a>
+    </div>
+    <div class="stamp" aria-hidden="true"><div>Fresh<br>off the<br>grill<small>Bahrain</small></div></div>
+  </div>
+</header>
+
+<main id="menu">
+  <div class="wrap menu-head">
+    <h2>Our menu</h2>
+    <p>Pick a category. All items and prices below are samples.</p>
+  </div>
+  <nav class="cats" aria-label="Menu categories"><div class="wrap" id="cats"></div></nav>
+  <div class="wrap"><div class="grid" id="grid" aria-live="polite"></div></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="logo">Bun &amp; Bite</div>
+    <p>Bahrain · Prices in BD · Sample content for demo</p>
+    <a class="ig" href="https://www.instagram.com/bunandbitebh/" target="_blank" rel="noopener">Follow @bunandbitebh</a>
+  </div>
+</footer>
+
+<script>
+/* ===== EDIT HERE: replace sample items, prices and photos ===== */
+const CURRENCY = "BD";
+const U = id => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=800&q=70`;
+const ITEMS = [
+  // category, name, description, price, image (URL or "images/your-file.jpg"), emoji fallback, optional tag
+  {c:"Burgers",n:"The Classic",d:"Beef patty, cheddar, lettuce, tomato, pickles and house sauce on a toasted bun.",p:2.9,i:U("photo-1568901346375-23c9450c58cd"),e:"🍔",t:"Best seller"},
+  {c:"Burgers",n:"Double Stack",d:"Two smashed patties, double cheese, caramelised onions and bite sauce.",p:3.9,i:U("photo-1550547660-d9450f859349"),e:"🍔"},
+  {c:"Burgers",n:"Spicy Fire",d:"Beef patty, jalapeños, pepper jack and fiery orange mayo.",p:3.4,i:U("photo-1594212699903-ec8a3eca50f5"),e:"🌶️",t:"Hot"},
+  {c:"Burgers",n:"Crispy Chicken",d:"Buttermilk fried chicken, slaw and pickles on a brioche bun.",p:3.2,i:U("photo-1606755962773-d324e0a13086"),e:"🍗"},
+  {c:"Burgers",n:"Mushroom Melt",d:"Beef patty, sautéed mushrooms, Swiss cheese and garlic aioli.",p:3.5,i:U("photo-1571091718767-18b5b1457add"),e:"🍄"},
+  {c:"Burgers",n:"Veggie Crunch",d:"Crispy veggie patty, avocado, lettuce, tomato and herb mayo.",p:2.8,i:U("photo-1520072959219-c595dc870360"),e:"🥬",t:"Veg"},
+  {c:"Sides",n:"Golden Fries",d:"Crispy shoestring fries with sea salt.",p:1.2,i:U("photo-1573080496219-bb080dd4f877"),e:"🍟"},
+  {c:"Sides",n:"Loaded Fries",d:"Fries topped with cheese sauce, jalapeños and crispy onions.",p:2.2,i:U("photo-1630384060421-cb20d0e0649d"),e:"🍟"},
+  {c:"Sides",n:"Onion Rings",d:"Beer-style battered rings with a smoky dip.",p:1.5,i:U("photo-1639024471283-03518883512d"),e:"🧅"},
+  {c:"Sides",n:"Chicken Bites",d:"Six crispy bites with your choice of dip.",p:2.4,i:U("photo-1562967914-608f82629710"),e:"🍗"},
+  {c:"Drinks",n:"Vanilla Shake",d:"Thick and creamy, topped with whipped cream.",p:1.9,i:U("photo-1572490122747-3968b75cc699"),e:"🥤"},
+  {c:"Drinks",n:"Chocolate Shake",d:"Rich chocolate ice cream blended smooth.",p:1.9,i:U("photo-1577805947697-89e18249d767"),e:"🍫"},
+  {c:"Drinks",n:"Fresh Lemon Mint",d:"Cold, tangy and refreshing.",p:1.3,i:U("photo-1556679343-c7306c1976bc"),e:"🍋"},
+  {c:"Drinks",n:"Soft Drink",d:"Choose your favourite can.",p:0.6,i:"",e:"🥫"},
+  {c:"Desserts",n:"Brownie Bite",d:"Warm fudge brownie with a scoop of vanilla.",p:1.8,i:U("photo-1606313564200-e75d5e30476c"),e:"🍫"},
+  {c:"Desserts",n:"Cookie Sundae",d:"Chocolate chip cookie, ice cream and caramel drizzle.",p:2.0,i:U("photo-1563805042-7684c019e1cb"),e:"🍪"}
+];
+/* ============================================================== */
+
+const cats = ["All", ...new Set(ITEMS.map(x => x.c))];
+const catsEl = document.getElementById("cats"), grid = document.getElementById("grid");
+const esc = s => s.replace(/[&<>"]/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+
+function render(cat){
+  grid.innerHTML = ITEMS.filter(x => cat === "All" || x.c === cat).map(x => `
+    <article class="card">
+      <div class="ph" aria-hidden="${!x.i}">
+        ${x.t ? `<span class="tag">${esc(x.t)}</span>` : ""}
+        <span>${x.e}</span>
+        ${x.i ? `<img src="${x.i}" alt="${esc(x.n)}" loading="lazy" onerror="this.remove()">` : ""}
+      </div>
+      <div class="body">
+        <div class="top"><h3>${esc(x.n)}</h3><span class="price">${CURRENCY} ${x.p.toFixed(3)}</span></div>
+        <p>${esc(x.d)}</p>
+      </div>
+    </article>`).join("");
+}
+catsEl.innerHTML = cats.map((c,i) => `<button type="button" aria-pressed="${i===0}">${c}</button>`).join("");
+catsEl.addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  catsEl.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  render(b.textContent);
+});
+render("All");
+</script>
+</body>
+</html>
